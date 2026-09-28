@@ -51,12 +51,12 @@ The recommendation system consists of four main components:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/harsh3-web/Ecommerce-Recommender.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd er
+   cd Ecommerce-Recommender
    ```
 
 3. Install the required packages:

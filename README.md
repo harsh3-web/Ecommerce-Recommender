@@ -32,8 +32,8 @@ popularity baseline. Alpha (0.75) was chosen on a separate validation set, never
 | Notebook | What it does |
 |---|---|
 | 01_data_generation | Real products + images, simulated users, browsing and purchases |
-| 02_eda_and_baselines | Sparsity, long tail, cold start; tests the original methods |
-| 03_improved_recommenders | Item-CF (cosine), embedding content model, normalised hybrid |
+| 02_eda_and_baselines | Sparsity, long tail, cold start; tests the original methods (first synthetic catalogue) |
+| 03_improved_recommenders | Item-CF (cosine), embedding content model, normalised hybrid (first synthetic catalogue) |
 | 04_evaluation | Leave-last-purchase-out split, HR@10 / NDCG@10, baselines, alpha tuning |
 | 05_embeddings | ResNet50 (frozen) image and MiniLM text embeddings, precomputed |
 | 06_gcn | Co-purchase graph, GCN propagation by hand and verified against PyG GCNConv |
@@ -41,8 +41,8 @@ popularity baseline. Alpha (0.75) was chosen on a separate validation set, never
 | 08_app | Builds and runs the Flask app |
 
 ## Key findings
-- **Metric choice matters:** content-based scored 99% on category match but was below the
-  popularity baseline at predicting the exact next purchase.
+- **Metric choice matters:** content-based scored 99% on category match (notebook 03, first synthetic
+  catalogue) but was below the popularity baseline at predicting the exact next purchase.
 - **Leakage:** every purchase follows a browse of the same product, so the test item's browse
   is also removed from training.
 - **GCN:** one hop of graph smoothing improved content NDCG by 43%; two or more hops hurt

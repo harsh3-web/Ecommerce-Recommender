@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Recommender</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head><body><div class="container">
+  <h1>Product Recommender</h1>
+  <p class="subtitle">Personalised fashion recommendations from 200 real Myntra products</p>
+  <div class="panel">
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    <form action="/recommend" method="get">
+      <label for="uid">User ID</label>
+      <input id="uid" type="number" name="user_id" min="1" placeholder="e.g. 7" required>
+      <p class="hint">Existing users: 1-{{ n_users }}. Try 9999 to see a new user (cold start).</p>
+      <label for="method">Method</label>
+      <select id="method" name="method">
+        {% for m in methods %}<option value="{{ m }}">{{ m }}</option>{% endfor %}
+      </select>
+      <button type="submit">Get recommendations</button>
+    </form>
+  </div>
+</div></body></html>

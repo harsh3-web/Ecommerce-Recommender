@@ -1,32 +1,13 @@
-# Dataset directories
+# Generated data and models - recreated by running the notebooks
+*.csv
+*.npy
+*.pt
+static/images/
 datasets/
 
-# Python cache files
+# System and Python junk
+.DS_Store
 __pycache__/
 *.py[cod]
-*$py.class
-
-# Distribution / packaging
-dist/
-build/
-*.egg-info/
-
-# Virtual environment
-venv/
-env/
-.env/
-
-# IDE settings
-.vscode/
-.idea/
-
-# Logs
+.ipynb_checkpoints/
 *.log
-
-# Exclude datasets directory and large files
-datasets/
-*.csv
-*.png
-*.jpg
-*.zip
-*.gz

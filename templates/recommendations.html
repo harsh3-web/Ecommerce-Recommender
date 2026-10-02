@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recommendations for user {{ user_id }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head><body><div class="container">
+  <div class="toolbar">
+    <div><h1>Top 10 for user {{ user_id }}</h1>
+      <span class="badge">{{ method }}</span></div>
+    <a class="btn" href="/">&larr; New search</a>
+  </div>
+  <div class="grid">
+    {% for r in recs %}
+    <div class="card">
+      <img src="{{ url_for('static', filename='images/' ~ r.product_id ~ '_1_front.jpg') }}" alt="{{ r.product_name }}">
+      <div class="info">
+        <div class="rank">#{{ loop.index }} &middot; {{ r.category }}</div>
+        <p class="name">{{ r.product_name }}</p>
+        <div class="meta"><span>Rs {{ r.price }}</span><span>&#9733; {{ r.rating }}</span></div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div></body></html>
